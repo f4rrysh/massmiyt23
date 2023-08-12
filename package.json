@@ -1,0 +1,13 @@
+{
+  "name": "massmiyt23",
+  "version": "1.0.0",
+  "description": "Official website of the 2023 MASSMIYT event",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f4rrysh/massmiyt23.git"
+  },
+  "bugs": {
+    "url": "https://github.com/f4rrysh/massmiyt23/issues"
+  },
+  "homepage": "https://github.com/f4rrysh/massmiyt23#readme"
+}
