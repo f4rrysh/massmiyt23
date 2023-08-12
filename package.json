@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Official website of the 2023 MASSMIYT event",
   "scripts": {
+    "serve": "npx webpack serve",
     "fmt": "npx prettier . --write"
   },
   "repository": {
@@ -14,6 +15,9 @@
   },
   "homepage": "https://github.com/f4rrysh/massmiyt23#readme",
   "devDependencies": {
+    "@types/node": "^20.4.10",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
     "esbuild": "^0.19.1",
     "esbuild-loader": "^4.0.0",
     "html-webpack-plugin": "^5.5.3",
@@ -23,6 +27,8 @@
   },
   "dependencies": {
     "dotenv": "^16.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"

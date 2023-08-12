@@ -1,3 +1,6 @@
+// Disable TS in this file
+// @ts-nocheck
+
 require('dotenv').config();
 
 const { resolve } = require('node:path');
@@ -5,6 +8,7 @@ const { readdirSync } = require('node:fs');
 
 const webpack = require('webpack');
 const Terser = require('terser-webpack-plugin');
+const HTML = require('html-webpack-plugin');
 
 /**
  * Get the entry points of the website
@@ -17,7 +21,7 @@ function getEntryObject() {
     readdirSync(resolve(process.cwd(), 'pages'))
         .filter((file) => file.endsWith('.tsx'))
         .map((file) => {
-            const fileName = filePath.split('.').shift().toLowerCase();
+            const fileName = file.split('.').shift().toLowerCase();
             const filePath = resolve(process.cwd(), 'pages', file);
 
             entry[fileName] = filePath;
@@ -46,13 +50,34 @@ function getMode() {
     }
 }
 
+function generatePages() {
+    return readdirSync(resolve(process.cwd(), 'pages'))
+        .filter((file) => file.endsWith('.tsx'))
+        .map((file) => {
+            const fileName = file.split('.').shift().toLowerCase();
+
+            if (fileName === 'home') {
+                return new HTML({
+                    template: resolve(process.cwd(), 'templates/index.html'),
+                    filename: 'index.html',
+                    chunks: ['home']
+                });
+            }
+
+            return new HTML({
+                template: resolve(process.cwd(), 'templates/index.html'),
+                filename: `${fileName}/index.html`,
+                chunks: [fileName]
+            });
+        });
+}
+
 // Constant(s)
 const IS_DEV = getMode() === 'development';
 const IS_PROD = !IS_DEV;
 
 /** @type {webpack.Configuration} */
 const config = {
-    ignoreWarnings: IS_PROD,
     devtool: IS_DEV ? 'source-map' : false,
     entry: getEntryObject(),
     mode: getMode(),
@@ -69,7 +94,7 @@ const config = {
         rules: [
             {
                 test: /\.[jt]sx?$/,
-                use: 'esbuild-loader',
+                loader: 'esbuild-loader',
                 options: {
                     target: 'es2020',
                     loader: 'tsx'
@@ -80,7 +105,7 @@ const config = {
     optimization: {
         minimizer: [new Terser()]
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()],
+    plugins: [new webpack.HotModuleReplacementPlugin(), ...generatePages()],
     devServer: {
         hot: true
     }

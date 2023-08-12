@@ -19,6 +19,7 @@
         "allowUmdGlobalAccess": false,
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
+        "jsx": "react",
         "paths": {}
     }
 }
