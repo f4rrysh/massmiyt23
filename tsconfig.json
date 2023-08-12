@@ -1,0 +1,24 @@
+{
+    "exclude": ["./build/", "./functions", "./node_modules/"],
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "alwaysStrict": true,
+        "strict": true,
+        "strictBindCallApply": true,
+        "strictFunctionTypes": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "module": "esnext",
+        "target": "es2020",
+        "allowSyntheticDefaultImports": true,
+        "allowUmdGlobalAccess": false,
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "paths": {}
+    }
+}
