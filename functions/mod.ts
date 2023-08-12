@@ -13,7 +13,7 @@ import {
 
 /**
  * Format the time to a specific timezone. Perfect to use with logger(s)
- * 
+ *
  * @param time The time to format
  * @return The formatted time
  */
@@ -32,10 +32,9 @@ function formatTimeString(time: number = Date.now()): string {
     return current;
 }
 
-
 /**
  * Log message formatted with time and log type
- * 
+ *
  * @param type The type of logging
  * @param message The text to log
  */
@@ -52,10 +51,10 @@ function log(type: 'error' | 'warn' | 'info', ...message: string[]): void {
                 brightRed(brightYellow('[?]')),
                 ...message
             );
-        
+
         case 'info':
             return console.log(time, brightBlue('[*]'), ...message);
-        
+
         default:
             return log('error', `'${type}' is not a valid logging type`);
     }
@@ -99,7 +98,7 @@ const serveOption: Deno.ServeOptions = {
             return log('info', 'Listening on:', bold(`https://${hostname}/`));
         }
     }
-}
+};
 
 // Serve the application by handling request and returning a `Response` object
 Deno.serve(serveOption, async (request) => {
@@ -108,10 +107,12 @@ Deno.serve(serveOption, async (request) => {
         code: 500
     });
 
-    const response = await app.handle(request) || new Response(body, {
-        statusText: 'An unexpected internal server error has occurred',
-        status: 500
-    });
+    const response =
+        (await app.handle(request)) ||
+        new Response(body, {
+            statusText: 'An unexpected internal server error has occurred',
+            status: 500
+        });
 
     return response;
 });
