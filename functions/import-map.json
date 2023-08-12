@@ -1,0 +1,11 @@
+{
+    "imports": {
+        "std/": "https://deno.land/std@0.198.0/",
+        "std:fmt": "./libs/deno.land/std/fmt.ts",
+        "std:path": "./libs/deno.land/std/path.ts",
+        "x:esbuild": "./libs/deno.land/x/esbuild.ts",
+        "x:oak": "./libs/deno.land/x/oak.ts",
+        "esm:@supabase/supabase-js": "./libs/esm.sh/@supabase/supabase-js.ts",
+        "esm:esbuild-plugin-import-map": "./libs/esm.sh/esbuild-plugin-import-map.ts"
+    }
+}

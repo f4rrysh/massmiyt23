@@ -160,6 +160,19 @@
     "https://deno.land/x/oak@v12.6.0/structured_clone.ts": "c3888b14d1eec558345bfbf13d0993d59bd45aaa8588444e35dd558c3a921cd8",
     "https://deno.land/x/oak@v12.6.0/testing.ts": "37d684d57bb8e5150fb5eb2677e66b04dcb422709cf2c5a74c1df94d52aa02e2",
     "https://deno.land/x/oak@v12.6.0/util.ts": "0a3fdffb114859c2de84e1783efa3a544af4d2af8c6f08e0d25655de9d3e69bb",
-    "https://deno.land/x/path_to_regexp@v6.2.1/index.ts": "894060567837bae8fc9c5cbd4d0a05e9024672083d5883b525c031eea940e556"
+    "https://deno.land/x/path_to_regexp@v6.2.1/index.ts": "894060567837bae8fc9c5cbd4d0a05e9024672083d5883b525c031eea940e556",
+    "https://esm.sh/esbuild-plugin-import-map@2.1.0": "fda4822840a3198ac1c09595d8da0af8e77932248c8dffce716710cf077ee6bb",
+    "https://esm.sh/v130/esbuild-plugin-import-map@2.1.0/denonext/esbuild-plugin-import-map.mjs": "5435d8fbf3bc22f61a1b633836cee0cef580f7e1e4127b602db4cc77099fbb48"
+  },
+  "npm": {
+    "specifiers": {
+      "@types/node": "@types/node@18.16.19"
+    },
+    "packages": {
+      "@types/node@18.16.19": {
+        "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
+        "dependencies": {}
+      }
+    }
   }
 }

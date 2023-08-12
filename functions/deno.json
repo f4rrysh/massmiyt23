@@ -1,4 +1,5 @@
 {
+    "importMap": "import-map.json",
     "tasks": {
         "build": "deno run --allow-env --allow-net --allow-read --allow-write --allow-run build.ts",
         "serve": "deno run --allow-env --allow-net --allow-read mod.ts"
