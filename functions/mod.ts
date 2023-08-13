@@ -21,7 +21,7 @@ app.use(useStatic());
 const serveOption: Deno.ServeOptions = {
     port: 8080,
     onListen({ hostname, port }) {
-        if (Deno.env.get('DENO_REGION')) {
+        if (!Deno.env.get('DENO_REGION')) {
             return log(
                 'info',
                 'Listening on:',
