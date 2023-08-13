@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Official website of the 2023 MASSMIYT event",
   "scripts": {
+    "build": "node build.js",
     "serve": "npx webpack serve",
     "fmt": "npx prettier . --write"
   },
