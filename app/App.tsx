@@ -6,10 +6,10 @@ interface AppProp {
     title: string;
 }
 
-// TODO: Finish the Fallback component
-function Fallback(): null {
-    return null;
-}
+// Main layout(s)
+import Navbar from './Navbar';
+import Fallback from './Fallback';
+import Footer from './Footer';
 
 // Load the style(s)
 import 'styles/modules.scss';
@@ -25,13 +25,17 @@ export default function App({ children, title }: AppProp): JSX.Element {
                 <title>{`MASSMIYT23 | ${title}`}</title>
             </Helmet>
 
-            <div id="header"></div>
+            <header className="header">
+                <Navbar />
+            </header>
 
             <div id="body">
                 <Suspense fallback={<Fallback />}>{children}</Suspense>
             </div>
 
-            <div id="footer"></div>
+            <footer className="footer">
+                <Footer />
+            </footer>
         </StrictMode>
     );
 }
