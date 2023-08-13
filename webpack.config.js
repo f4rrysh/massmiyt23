@@ -76,6 +76,7 @@ function generatePages() {
 // Constant(s)
 const IS_DEV = getMode() === 'development';
 const IS_PROD = !IS_DEV;
+const FILENAME = IS_DEV ? 'name' : 'contenthash';
 
 /** @type {webpack.Configuration} */
 const config = {
@@ -83,7 +84,7 @@ const config = {
     entry: getEntryObject(),
     mode: getMode(),
     output: {
-        filename: `scripts/[${IS_DEV ? 'name' : 'contenthash'}].js`,
+        filename: `scripts/[${FILENAME}].js`,
         path: resolve(process.cwd(), 'build/static'),
         clean: IS_PROD
     },
@@ -91,6 +92,7 @@ const config = {
         extensions: ['.js', '.ts', '.jsx', '.tsx'],
         alias: {
             app: resolve(process.cwd(), 'app'),
+            components: resolve(process.cwd(), 'components'),
             styles: resolve(process.cwd(), 'styles')
         }
     },
@@ -108,6 +110,20 @@ const config = {
             {
                 test: /\.(s?c|sa)ss$/,
                 use: [ExtractCSS.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|jpe?g)$/,
+                exclude: /[\\/]node_modules[\\/]/,
+                generator: {
+                    filename: `images/[${FILENAME}][ext]`
+                }
+            },
+            {
+                test: /\.m(ov|p4)/,
+                exclude: /[\\/]node_modules[\\/]/,
+                generator: {
+                    filename: `images/[${FILENAME}][ext]`
+                }
             }
         ]
     },
@@ -117,7 +133,7 @@ const config = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new ExtractCSS({
-            filename: `styles/[${IS_DEV ? 'name' : 'contenthash'}].css`
+            filename: `styles/[${FILENAME}].css`
         }),
 
         ...generatePages()
