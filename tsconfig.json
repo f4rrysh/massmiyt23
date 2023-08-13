@@ -20,6 +20,8 @@
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
         "jsx": "react",
-        "paths": {}
+        "paths": {
+            "app/*": ["./app/*"]
+        }
     }
 }

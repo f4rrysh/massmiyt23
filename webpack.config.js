@@ -9,6 +9,7 @@ const { readdirSync } = require('node:fs');
 const webpack = require('webpack');
 const Terser = require('terser-webpack-plugin');
 const HTML = require('html-webpack-plugin');
+const ExtractCSS = require('mini-css-extract-plugin');
 
 /**
  * Get the entry points of the website
@@ -88,24 +89,39 @@ const config = {
     },
     resolve: {
         extensions: ['.js', '.ts', '.jsx', '.tsx'],
-        alias: {}
+        alias: {
+            app: resolve(process.cwd(), 'app'),
+            styles: resolve(process.cwd(), 'styles')
+        }
     },
     module: {
         rules: [
             {
                 test: /\.[jt]sx?$/,
+                exclude: /[\\/]node_modules[\\/]/,
                 loader: 'esbuild-loader',
                 options: {
                     target: 'es2020',
                     loader: 'tsx'
                 }
+            },
+            {
+                test: /\.(s?c|sa)ss$/,
+                use: [ExtractCSS.loader, 'css-loader', 'sass-loader']
             }
         ]
     },
     optimization: {
         minimizer: [new Terser()]
     },
-    plugins: [new webpack.HotModuleReplacementPlugin(), ...generatePages()],
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new ExtractCSS({
+            filename: `styles/[${IS_DEV ? 'name' : 'contenthash'}].css`
+        }),
+
+        ...generatePages()
+    ],
     devServer: {
         hot: true
     }
