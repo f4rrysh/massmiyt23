@@ -1,0 +1,39 @@
+name: CI
+
+on: [workflow_dispatch, push]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Install Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.36
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: v18.17
+
+      - name: Install depedencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy project
+        uses: denoland/deployctl@v1
+        with:
+          project: massmiyt23
+          entrypoint: server/mod.js
+          root: build

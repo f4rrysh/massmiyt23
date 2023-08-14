@@ -4,7 +4,7 @@
     "tabWidth": 4,
     "overrides": [
         {
-            "files": ["package.json", "package-lock.json"],
+            "files": ["package.json", "package-lock.json", "*.yml"],
             "options": {
                 "tabWidth": 2
             }
