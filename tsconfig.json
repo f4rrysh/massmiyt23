@@ -23,8 +23,9 @@
         "paths": {
             "app/*": ["./app/*"],
             "components/*": ["./components/*"],
+            "layouts/*": ["./layouts/*"],
             "styles/*": ["./styles/*"],
-            "layouts/*": ["./layouts/*"]
+            "utils/*": ["./utils/*"]
         }
     }
 }

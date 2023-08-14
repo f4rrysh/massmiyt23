@@ -1,5 +1,5 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { render } from 'utils/render';
 
 // App
 import App from 'app/App';
@@ -23,4 +23,4 @@ function Home(): JSX.Element {
     );
 }
 
-createRoot(document.body).render(<Home />);
+render(<Home />);
