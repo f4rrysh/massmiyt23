@@ -21,7 +21,10 @@
         "allowUnusedLabels": false,
         "jsx": "react",
         "paths": {
-            "app/*": ["./app/*"]
+            "app/*": ["./app/*"],
+            "components/*": ["./components/*"],
+            "styles/*": ["./styles/*"],
+            "layouts/*": ["./layouts/*"]
         }
     }
 }

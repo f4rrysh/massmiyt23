@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { createRoot } from 'react-dom/client';
+import { createClient } from '@supabase/supabase-js';
 
 // App
 import App from 'app/App';
+
+const Image = lazy(() => import('layouts/Image'));
 
 // Styling
 import 'styles/pages/Gallery.scss';

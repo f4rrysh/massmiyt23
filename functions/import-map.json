@@ -6,6 +6,7 @@
         "std:path": "./libs/deno.land/std/path.ts",
         "x:esbuild": "./libs/deno.land/x/esbuild.ts",
         "x:oak": "./libs/deno.land/x/oak.ts",
-        "esm:esbuild-plugin-import-map": "./libs/esm.sh/esbuild-plugin-import-map.ts"
+        "esm:esbuild-plugin-import-map": "./libs/esm.sh/esbuild-plugin-import-map.ts",
+        "esm:@supabase/supabase-js": "./libs/esm.sh/@supabase/supabase-js.ts"
     }
 }

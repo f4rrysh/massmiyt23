@@ -1,3 +1,5 @@
+import 'std/dotenv/load.ts';
+
 import { Application } from 'x:oak';
 import { colors } from 'std:fmt';
 
@@ -8,6 +10,12 @@ import { log } from './utils/log.ts';
 
 // Initialize a new Oak application
 const app = new Application();
+
+// Route(s)
+import api from './routes/api.ts';
+
+app.use(api.routes());
+app.use(api.allowedMethods());
 
 // Middleware(s)
 import { useLogging } from './middlewares/logging.ts';

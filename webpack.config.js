@@ -93,6 +93,7 @@ const config = {
         alias: {
             app: resolve(process.cwd(), 'app'),
             components: resolve(process.cwd(), 'components'),
+            layouts: resolve(process.cwd(), 'layouts'),
             styles: resolve(process.cwd(), 'styles')
         }
     },
