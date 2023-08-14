@@ -25,15 +25,17 @@ export default function App({ children, title }: AppProp): JSX.Element {
                 <title>{`MASSMIYT23 | ${title}`}</title>
             </Helmet>
 
-            <header className="header">
+            <header className="container">
                 <Navbar />
             </header>
 
-            <div id="body">
-                <Suspense fallback={<Fallback />}>{children}</Suspense>
+            <div className="container">
+                <div className="body">
+                    <Suspense fallback={<Fallback />}>{children}</Suspense>
+                </div>
             </div>
 
-            <footer className="footer">
+            <footer className="container">
                 <Footer />
             </footer>
         </StrictMode>

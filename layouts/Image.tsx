@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-interface ImageProp {
+export interface ImageProp {
     src: string;
     alt?: string;
 }

@@ -85,6 +85,7 @@ const config = {
     mode: getMode(),
     output: {
         filename: `scripts/[${FILENAME}].js`,
+        assetModuleFilename: `scripts/[${FILENAME}].js`,
         path: resolve(process.cwd(), 'build/static'),
         clean: IS_PROD
     },
@@ -135,6 +136,7 @@ const config = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new ExtractCSS({
+            chunkFilename: `styles/[${FILENAME}].css`,
             filename: `styles/[${FILENAME}].css`
         }),
 
