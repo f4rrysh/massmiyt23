@@ -14,8 +14,10 @@ const app = new Application();
 // Route(s)
 import api from './routes/api.ts';
 
-app.use(api.routes());
-app.use(api.allowedMethods());
+[api].forEach((route) => {
+    app.use(route.allowedMethods());
+    app.use(route.routes());
+});
 
 // Middleware(s)
 import { useLogging } from './middlewares/logging.ts';
