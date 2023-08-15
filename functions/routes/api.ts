@@ -7,7 +7,7 @@ export default new Router({ prefix: '/api' })
 
         const { data, error } = await supabase
             .from('image')
-            .select('href, alt')
+            .select('*')
             .order('timestamp', {
                 ascending: false
             });
@@ -26,10 +26,14 @@ export default new Router({ prefix: '/api' })
             context.response.body = JSON.stringify({ image: data });
         }
     })
-    .get('/result', async (context) => {
+    .get('/event', async (context) => {
         const supabase = getSupabase();
 
-        const { data, error } = await supabase.from('result').select();
+        const { data, error } = await supabase
+            .from('event')
+            .select('*')
+            .order('sport')
+            .order('match');
 
         if (error || !data) {
             context.response.headers.set('Content-Type', 'application/json');
@@ -42,6 +46,6 @@ export default new Router({ prefix: '/api' })
             );
         } else {
             context.response.headers.set('Content-Type', 'application/json');
-            context.response.body = JSON.stringify({});
+            context.response.body = JSON.stringify(data);
         }
     });

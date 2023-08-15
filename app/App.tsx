@@ -7,7 +7,7 @@ interface AppProp {
 }
 
 // Main layout(s)
-import Navbar from './Navbar';
+import NavBar from './NavBar';
 import Fallback from './Fallback';
 import Footer from './Footer';
 
@@ -26,7 +26,7 @@ export default function App({ children, title }: AppProp): JSX.Element {
             </Helmet>
 
             <header className="container">
-                <Navbar />
+                <NavBar />
             </header>
 
             <div className="container">
