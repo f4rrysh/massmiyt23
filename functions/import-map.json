@@ -1,12 +1,11 @@
 {
     "imports": {
-        "std/": "https://deno.land/std@0.198.0/",
-        "std:fmt": "./libs/deno.land/std/fmt.ts",
-        "std:fs": "./libs/deno.land/std/fs.ts",
-        "std:path": "./libs/deno.land/std/path.ts",
-        "x:esbuild": "./libs/deno.land/x/esbuild.ts",
-        "x:oak": "./libs/deno.land/x/oak.ts",
-        "esm:esbuild-plugin-import-map": "./libs/esm.sh/esbuild-plugin-import-map.ts",
-        "esm:@supabase/supabase-js": "./libs/esm.sh/@supabase/supabase-js.ts"
+        "std:dotenv": "https://deno.land/std@0.198.0/dotenv/mod.ts",
+        "std:fmt/colors": "https://deno.land/std@0.198.0/fmt/colors.ts",
+        "std:fs": "https://deno.land/std@0.198.0/fs/mod.ts",
+        "std:path": "https://deno.land/std@0.198.0/path/mod.ts",
+        "x:esbuild": "https://deno.land/x/esbuild@v0.19.2/mod.js",
+        "x:oak": "https://deno.land/x/oak@v12.6.0/mod.ts",
+        "esm:esbuild-plugin-import-map": "https://esm.sh/esbuild-plugin-import-map@2.1.0"
     }
 }

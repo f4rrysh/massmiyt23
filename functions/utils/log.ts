@@ -1,7 +1,6 @@
-import { colors } from 'std:fmt';
+import { brightBlue, brightRed, brightYellow } from 'std:fmt/colors';
 import { formatTimeString } from './time.ts';
 
-const { brightBlue, brightRed, brightYellow } = colors;
 /**
  * Log message formatted with time and log type
  *

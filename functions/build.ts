@@ -1,4 +1,3 @@
-import { copy } from 'std:fs';
 import { resolve } from 'std:path';
 import { build, stop } from 'x:esbuild';
 import { load, plugin as importMapPlugin } from 'esm:esbuild-plugin-import-map';
@@ -17,8 +16,3 @@ await build({
 
 // Required for Deno
 stop();
-
-// Copy the libraries to the build directory
-await copy(resolve(Deno.cwd(), 'libs'), resolve(Deno.cwd(), 'build/libs'), {
-    overwrite: true
-});

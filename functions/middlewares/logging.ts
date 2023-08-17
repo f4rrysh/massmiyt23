@@ -1,9 +1,7 @@
 import { Middleware, Context, Next } from 'x:oak';
-import { colors } from 'std:fmt';
+import { brightGreen } from 'std:fmt/colors';
 
 import { log } from '../utils/log.ts';
-
-const { brightGreen } = colors;
 
 /**
  * An Oak middleware for logging request(s)
