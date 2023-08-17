@@ -9,7 +9,7 @@ import 'styles/pages/Schedule.scss';
 
 function Schedule(): JSX.Element {
     return (
-        <App>
+        <App title="Schedule">
             <div className="schedule"></div>
         </App>
     );

@@ -1,4 +1,5 @@
 {
+    "$schema": "schemas/json/tsconfig.json",
     "exclude": ["./build/", "./functions", "./node_modules/"],
     "compilerOptions": {
         "allowJs": true,
@@ -23,6 +24,8 @@
         "paths": {
             "app/*": ["./app/*"],
             "components/*": ["./components/*"],
+            "hooks/*": ["./hooks/*"],
+            "images/*": ["./images/*"],
             "layouts/*": ["./layouts/*"],
             "styles/*": ["./styles/*"],
             "utils/*": ["./utils/*"]

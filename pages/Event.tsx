@@ -9,7 +9,7 @@ import 'styles/pages/Event.scss';
 
 function Event(): JSX.Element {
     return (
-        <App>
+        <App title="Event">
             <div className="event"></div>
         </App>
     );

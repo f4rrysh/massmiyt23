@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default function Fallback(): JSX.Element {
+export interface FallbackProp {}
+
+export default function Fallback({}: FallbackProp): JSX.Element {
     return (
         <div className="fallback">
             <div className="loading"></div>

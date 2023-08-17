@@ -1,35 +1,35 @@
 import React from 'react';
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import Logo from 'images/logo.svg';
 
 export default function NavBar(): JSX.Element {
     return (
-        <div className="navbar">
-            <Navbar
-                expand="lg"
-                className="bg-body-tertiary width-full"
-                sticky="top"
-            >
-                <Container>
-                    <Navbar.Brand href="/">MASSMIYT23</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse>
-                        <Nav className="justify-content-end">
-                            <Nav.Item>
-                                <Nav.Link href="/event">Event</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href="/gallery">Gallery</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href="/schedule">Schedule</Nav.Link>
-                            </Nav.Item>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-        </div>
+        <header>
+            <nav className="navbar">
+                <a href="/" className="logo">
+                    <Logo width={40} height={40} />
+                </a>
+
+                <div>
+                    <ul className="items">
+                        <li className="item">
+                            <a href="/">Home</a>
+                        </li>
+
+                        <li className="item">
+                            <a href="event">Event</a>
+                        </li>
+
+                        <li className="item">
+                            <a href="gallery">Gallery</a>
+                        </li>
+
+                        <li className="item">
+                            <a href="schedule">Schedule</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
     );
 }

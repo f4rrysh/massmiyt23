@@ -1,12 +1,12 @@
 import React, { StrictMode, Suspense } from 'react';
-import { Helmet } from 'react-helmet';
 
-interface AppProp {
+export interface AppProp {
     children: JSX.Element;
     title: string;
 }
 
 // Main layout(s)
+import Header from './Header';
 import NavBar from './NavBar';
 import Fallback from './Fallback';
 import Footer from './Footer';
@@ -21,13 +21,8 @@ import 'styles/main.scss';
 export default function App({ children, title }: AppProp): JSX.Element {
     return (
         <StrictMode>
-            <Helmet>
-                <title>{`MASSMIYT23 | ${title}`}</title>
-            </Helmet>
-
-            <header className="container">
-                <NavBar />
-            </header>
+            <Header title={title} />
+            <NavBar />
 
             <div className="container">
                 <div className="body">
@@ -35,9 +30,7 @@ export default function App({ children, title }: AppProp): JSX.Element {
                 </div>
             </div>
 
-            <footer className="container">
-                <Footer />
-            </footer>
+            <Footer />
         </StrictMode>
     );
 }

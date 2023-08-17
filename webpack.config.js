@@ -94,6 +94,8 @@ const config = {
         alias: {
             app: resolve(process.cwd(), 'app'),
             components: resolve(process.cwd(), 'components'),
+            hooks: resolve(process.cwd(), 'hooks'),
+            images: resolve(process.cwd(), 'images'),
             layouts: resolve(process.cwd(), 'layouts'),
             styles: resolve(process.cwd(), 'styles'),
             utils: resolve(process.cwd(), 'utils')
@@ -127,6 +129,11 @@ const config = {
                 generator: {
                     filename: `images/[${FILENAME}][ext]`
                 }
+            },
+            {
+                test: /\.svg$/,
+                exclude: /[\\/]node_modules[\\/]/,
+                loader: '@svgr/webpack'
             }
         ]
     },
