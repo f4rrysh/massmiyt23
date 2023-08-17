@@ -24,6 +24,7 @@
         "paths": {
             "app/*": ["./app/*"],
             "components/*": ["./components/*"],
+            "data/*": ["./data/*"],
             "hooks/*": ["./hooks/*"],
             "images/*": ["./images/*"],
             "layouts/*": ["./layouts/*"],

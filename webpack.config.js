@@ -94,6 +94,7 @@ const config = {
         alias: {
             app: resolve(process.cwd(), 'app'),
             components: resolve(process.cwd(), 'components'),
+            data: resolve(process.cwd(), 'data'),
             hooks: resolve(process.cwd(), 'hooks'),
             images: resolve(process.cwd(), 'images'),
             layouts: resolve(process.cwd(), 'layouts'),
