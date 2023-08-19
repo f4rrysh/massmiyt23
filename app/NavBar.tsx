@@ -15,8 +15,13 @@ export default function NavBar(): JSX.Element {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/">
+                                <b>Home</b>
+                            </Nav.Link>
                             <Nav.Link href="/event">Event</Nav.Link>
+                            <Nav.Link href="/gallery">Gallery</Nav.Link>
+                            <Nav.Link href="/result">Result</Nav.Link>
+                            <Nav.Link href="/schedule">Schedule</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

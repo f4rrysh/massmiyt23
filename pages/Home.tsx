@@ -7,7 +7,6 @@ import App from 'app/App';
 // Layout
 const Fixture = lazy(() => import('layouts/Fixture'));
 const Rank = lazy(() => import('layouts/Rank'));
-const Result = lazy(() => import('layouts/Result'));
 
 function Home(): JSX.Element {
     return (
@@ -25,9 +24,7 @@ function Home(): JSX.Element {
                     <Rank />
                 </div>
 
-                <div className="container">
-                    <Result />
-                </div>
+                <div className="container"></div>
             </div>
         </App>
     );
