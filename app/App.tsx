@@ -24,10 +24,8 @@ export default function App({ children, title }: AppProp): JSX.Element {
             <Header title={title} />
             <NavBar />
 
-            <div className="container">
-                <div className="body">
-                    <Suspense fallback={<Fallback />}>{children}</Suspense>
-                </div>
+            <div className="body">
+                <Suspense fallback={<Fallback />}>{children}</Suspense>
             </div>
 
             <Footer />

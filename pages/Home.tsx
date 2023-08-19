@@ -9,9 +9,6 @@ const Fixture = lazy(() => import('layouts/Fixture'));
 const Rank = lazy(() => import('layouts/Rank'));
 const Result = lazy(() => import('layouts/Result'));
 
-// Styling
-import 'styles/pages/Home.scss';
-
 function Home(): JSX.Element {
     return (
         <App title="Home">

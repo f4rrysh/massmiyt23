@@ -1,27 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, type MouseEvent } from 'react';
 import { motion } from 'framer-motion';
-import { getSupabase } from 'data/supabase';
+import { useStorage } from 'hooks/storage';
 
-export interface ImageProp {
-    setSelectedImage: (selectedImage: string) => void;
-}
+export interface ImageProp {}
 
-export default function Image({ setSelectedImage }: ImageProp): JSX.Element {
-    const [images, setImages] = useState<string[]>([]);
+import 'styles/layouts/Image.scss';
 
-    const getImages = async () => {
-        const supabase = getSupabase();
+export default function Image({}: ImageProp): JSX.Element {
+    const { images, error } = useStorage('image');
+    const [image, setImage] = useState('');
 
-        setImages(
-            (await supabase.storage.from('image').list()).data?.map((file) => {
-                return `https://hlekjfeoplbhldjqzqvs.supabase.co/storage/v1/object/public/image/${file.name}`;
-            }) || []
-        );
+    const handleOnClick = (event: MouseEvent<HTMLDivElement>) => {
+        if (event.currentTarget.classList.contains('backdrop')) {
+            setImage('');
+        }
     };
 
-    useEffect(() => {
-        getImages();
-    }, []);
+    // TODO: Handle error
+    if (error) {
+    }
 
     return (
         <div className="image">
@@ -32,7 +29,7 @@ export default function Image({ setSelectedImage }: ImageProp): JSX.Element {
                         whileHover={{ opacity: 1 }}
                         className="container"
                         key={index}
-                        onClick={() => setSelectedImage(image)}
+                        onClick={() => setImage(image)}
                     >
                         <motion.img
                             src={image}
@@ -43,6 +40,21 @@ export default function Image({ setSelectedImage }: ImageProp): JSX.Element {
                     </motion.div>
                 );
             })}
+            {image && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="backdrop"
+                    onClick={handleOnClick}
+                >
+                    <motion.img
+                        initial={{ y: '-100vh' }}
+                        animate={{ y: 0 }}
+                        src={image}
+                        style={{ backgroundColor: '#fff' }}
+                    />
+                </motion.div>
+            )}
         </div>
     );
 }
