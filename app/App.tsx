@@ -6,7 +6,7 @@ export interface AppProp {
 }
 
 // Main layout(s)
-import Header from './Header';
+import Head from './Head'
 import NavBar from './NavBar';
 import Fallback from './Fallback';
 import Footer from './Footer';
@@ -21,7 +21,7 @@ import 'styles/main.scss';
 export default function App({ children, title }: AppProp): JSX.Element {
     return (
         <StrictMode>
-            <Header title={title} />
+            <Head title={title} />
             <NavBar />
 
             <div className="body">
