@@ -8,23 +8,14 @@ import App from 'app/App';
 const Fixture = lazy(() => import('layouts/Fixture'));
 const Rank = lazy(() => import('layouts/Rank'));
 
+// import sekolah from 'images/sekolah.jpg';
+
 function Home(): JSX.Element {
     return (
         <App title="Home">
             <div className="home">
-                <div className="container">
-                    <img className="thumbnail" src="" />
-                </div>
-
-                <div className="container">
-                    <Fixture />
-                </div>
-
-                <div className="container">
-                    <Rank />
-                </div>
-
-                <div className="container"></div>
+                <Fixture />
+                <Rank />
             </div>
         </App>
     );

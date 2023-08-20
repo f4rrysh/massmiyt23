@@ -118,7 +118,7 @@ const config = {
                 use: [ExtractCSS.loader, 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(png|jpe?g)$/,
+                test: /\.(png|jpg)$/,
                 exclude: /[\\/]node_modules[\\/]/,
                 generator: {
                     filename: `images/[${FILENAME}][ext]`

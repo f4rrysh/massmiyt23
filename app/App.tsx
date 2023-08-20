@@ -6,10 +6,9 @@ export interface AppProp {
 }
 
 // Main layout(s)
-import Head from './Head'
+import Head from './Head';
 import NavBar from './NavBar';
 import Fallback from './Fallback';
-import Footer from './Footer';
 
 // Load the style(s)
 import 'styles/modules.scss';
@@ -27,8 +26,6 @@ export default function App({ children, title }: AppProp): JSX.Element {
             <div className="body">
                 <Suspense fallback={<Fallback />}>{children}</Suspense>
             </div>
-
-            <Footer />
         </StrictMode>
     );
 }
