@@ -33,14 +33,26 @@ export default function EventCard(): JSX.Element {
                             <Card>
                                 <Card.Body>
                                     <Card.Title>
-                                        {toTitleCase(sport[0])}
+                                        {toTitleCase(sport[0]).replace(
+                                            'Pingpong',
+                                            'Ping-Pong'
+                                        )}
                                     </Card.Title>
                                     <Card.Text>
                                         Next game:{' '}
                                         {toTitleCase(next[0].day as string)}{' '}
                                         {next[0].time as string}
                                     </Card.Text>
-                                    <Button>{toTitleCase(sport[0])}</Button>
+                                    <Button
+                                        href={`/result#${sport[0]
+                                            .toLowerCase()
+                                            .replace(/ +/g, '-')}`}
+                                    >
+                                        {toTitleCase(sport[0]).replace(
+                                            'Pingpong',
+                                            'Ping-Pong'
+                                        )}
+                                    </Button>
                                 </Card.Body>
                             </Card>
                         </Col>
