@@ -1,4 +1,4 @@
-import { useEvent } from 'hooks/event';
+import { useRank } from 'hooks/rank';
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 
@@ -14,7 +14,7 @@ interface Rank {
 import 'styles/layouts/Rank.scss';
 
 export default function Rank({}: RankProp): JSX.Element {
-    const { data, error } = useEvent();
+    const { data, error } = useRank();
     console.log(data);
 
     return (
@@ -27,8 +27,21 @@ export default function Rank({}: RankProp): JSX.Element {
                         <th>Gold</th>
                         <th>Silver</th>
                         <th>Bronze</th>
+                        <th>Point</th>
                     </tr>
                 </thead>
+                <tbody>
+                    {data?.map((rank: any, index) => (
+                        <tr key={index}>
+                            <td>{index}</td>
+                            <td>{rank.school}</td>
+                            <td>{rank.gold || 0}</td>
+                            <td>{rank.silver || 0}</td>
+                            <td>{rank.bronze || 0}</td>
+                            <td>{rank.point || 'N/A'}</td>
+                        </tr>
+                    ))}
+                </tbody>
             </Table>
         </div>
     );

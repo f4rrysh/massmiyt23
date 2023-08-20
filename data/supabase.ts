@@ -48,6 +48,30 @@ export interface Database {
                 };
                 Relationships: [];
             };
+            rank: {
+                Row: {
+                    bronze: number | null;
+                    gold: number | null;
+                    id: number;
+                    school: string;
+                    silver: number | null;
+                };
+                Insert: {
+                    bronze?: number | null;
+                    gold?: number | null;
+                    id?: number;
+                    school: string;
+                    silver?: number | null;
+                };
+                Update: {
+                    bronze?: number | null;
+                    gold?: number | null;
+                    id?: number;
+                    school?: string;
+                    silver?: number | null;
+                };
+                Relationships: [];
+            };
         };
         Views: {
             [_ in never]: never;
