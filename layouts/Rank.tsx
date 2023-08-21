@@ -15,7 +15,6 @@ import 'styles/layouts/Rank.scss';
 
 export default function Rank({}: RankProp): JSX.Element {
     const { data, error } = useRank();
-    console.log(data);
 
     return (
         <div className="rank">
@@ -31,16 +30,15 @@ export default function Rank({}: RankProp): JSX.Element {
                     </tr>
                 </thead>
                 <tbody>
-                    {data?.map((rank: any, index) => (
-                        <tr key={index}>
-                            <td>{index + 1}</td>
-                            <td>{rank.school}</td>
-                            <td>{rank.gold || 0}</td>
-                            <td>{rank.silver || 0}</td>
-                            <td>{rank.bronze || 0}</td>
-                            <td>{rank.point || 'N/A'}</td>
-                        </tr>
-                    ))}
+                    {data
+                        ?.sort((a, b) => a.point - b.point)
+                        .map((rank: any, index) => (
+                            <tr key={index}>
+                                <td>{index + 1}</td>
+                                <td>{rank.school}</td>
+                                <td>{rank.point}</td>
+                            </tr>
+                        ))}
                 </tbody>
             </Table>
         </div>
