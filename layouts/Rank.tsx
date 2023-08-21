@@ -33,7 +33,7 @@ export default function Rank({}: RankProp): JSX.Element {
                 <tbody>
                     {data?.map((rank: any, index) => (
                         <tr key={index}>
-                            <td>{index}</td>
+                            <td>{index + 1}</td>
                             <td>{rank.school}</td>
                             <td>{rank.gold || 0}</td>
                             <td>{rank.silver || 0}</td>
