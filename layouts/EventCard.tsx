@@ -44,7 +44,7 @@ export default function EventCard(): JSX.Element {
                                         {next[0].time as string}
                                     </Card.Text>
                                     <Button
-                                        href={`/result#${sport[0]
+                                        href={`/schedule#${sport[0]
                                             .toLowerCase()
                                             .replace(/ +/g, '-')}`}
                                     >
