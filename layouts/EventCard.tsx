@@ -51,9 +51,9 @@ export default function EventCard(): JSX.Element {
                                             Recent result:{' '}
                                             {result.length ? (
                                                 <>
-                                                    {result[0].t_a || ''} vs{' '}
+                                                    {result[0].t_a || ''}{' '}
+                                                    {result[0].result || ''}{' '}
                                                     {result[0].t_b || ''}{' '}
-                                                    {result[0].result || ''}
                                                 </>
                                             ) : (
                                                 <>N/A</>
