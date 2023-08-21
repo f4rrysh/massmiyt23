@@ -30,6 +30,10 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          NODE_ENV: production
+          DENO_ENV: production
+          ENV: production
 
       - name: Deploy project
         uses: denoland/deployctl@v1

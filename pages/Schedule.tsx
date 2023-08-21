@@ -44,6 +44,7 @@ function Schedule(): JSX.Element {
                                             <th>Group</th>
                                             <th>Match</th>
                                             <th>Venue</th>
+                                            <th>Result</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -95,6 +96,10 @@ function Schedule(): JSX.Element {
                                                                 </td>
                                                                 <td>
                                                                     {_.venue}
+                                                                </td>
+                                                                <td>
+                                                                    {_.result ||
+                                                                        'N/A'}
                                                                 </td>
                                                             </tr>
                                                         ))}

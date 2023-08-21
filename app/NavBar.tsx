@@ -20,7 +20,6 @@ export default function NavBar(): JSX.Element {
                             </Nav.Link>
                             <Nav.Link href="/event">Event</Nav.Link>
                             <Nav.Link href="/gallery">Gallery</Nav.Link>
-                            <Nav.Link href="/result">Result</Nav.Link>
                             <Nav.Link href="/schedule">Schedule</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

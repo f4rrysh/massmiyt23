@@ -20,8 +20,10 @@ function Home(): JSX.Element {
                 <Fixture />
                 <br />
 
-                <h3>Standing</h3>
+                <h3>Ranking</h3>
                 <Rank />
+
+                <h3>Recent Results</h3>
             </div>
         </App>
     );

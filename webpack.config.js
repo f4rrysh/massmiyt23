@@ -10,6 +10,7 @@ const webpack = require('webpack');
 const Terser = require('terser-webpack-plugin');
 const HTML = require('html-webpack-plugin');
 const ExtractCSS = require('mini-css-extract-plugin');
+const Copy = require('copy-webpack-plugin');
 
 /**
  * Get the entry points of the website
@@ -146,6 +147,14 @@ const config = {
         new ExtractCSS({
             chunkFilename: `styles/[${FILENAME}].css`,
             filename: `styles/[${FILENAME}].css`
+        }),
+        new Copy({
+            patterns: [
+                {
+                    from: resolve(process.cwd(), 'public'),
+                    to: resolve(process.cwd(), 'build/static')
+                }
+            ]
         }),
 
         ...generatePages()

@@ -10,10 +10,12 @@ export function useStorage(bucket: string) {
 
         const files = await supabase.storage.from(bucket).list();
         setImages(
-            files.data?.map(
-                (file) =>
-                    `https://hlekjfeoplbhldjqzqvs.supabase.co/storage/v1/object/public/image/${file.name}`
-            ) || []
+            files.data
+                ?.filter((file) => !file.name.startsWith('.'))
+                .map(
+                    (file) =>
+                        `https://hlekjfeoplbhldjqzqvs.supabase.co/storage/v1/object/public/image/${file.name}`
+                ) || []
         );
         setError(files.error);
     };
