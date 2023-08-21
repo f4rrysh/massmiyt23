@@ -28,7 +28,7 @@ export default function Rank({}: RankProp): JSX.Element {
                 </thead>
                 <tbody>
                     {data
-                        ?.sort((a, b) => a.point - b.point)
+                        ?.sort((a, b) => b.point - a.point)
                         .map((rank: any, index) => (
                             <tr key={index}>
                                 <td>{index + 1}</td>
@@ -41,3 +41,8 @@ export default function Rank({}: RankProp): JSX.Element {
         </div>
     );
 }
+
+// kami tidak diberi hak sebagai pekerja
+// kami akan membuat pemberontakan
+// kami mahu gaji sebanyak rm200 seorang
+// ini adalah penderaan tempat kerja
