@@ -23,9 +23,6 @@ export default function Rank({}: RankProp): JSX.Element {
                     <tr>
                         <th>Rank</th>
                         <th>School</th>
-                        <th>Gold</th>
-                        <th>Silver</th>
-                        <th>Bronze</th>
                         <th>Point</th>
                     </tr>
                 </thead>
