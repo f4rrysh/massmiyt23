@@ -12,7 +12,7 @@ export function useStorage(bucket: string) {
         setImages(
             files.data
                 ?.filter((file) => !file.name.startsWith('.'))
-                .sort((a, b) => a.created_at.localeCompare(b.created_at))
+                .sort((a, b) => b.created_at.localeCompare(a.created_at))
                 .map(
                     (file) =>
                         `https://hlekjfeoplbhldjqzqvs.supabase.co/storage/v1/object/public/image/${file.name}`
