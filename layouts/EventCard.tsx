@@ -52,7 +52,8 @@ export default function EventCard(): JSX.Element {
                                             {result.length ? (
                                                 <>
                                                     {result[0].t_a || ''} vs{' '}
-                                                    {result[0].t_b || ''}
+                                                    {result[0].t_b || ''}{' '}
+                                                    {result[0].result || ''}
                                                 </>
                                             ) : (
                                                 <>N/A</>

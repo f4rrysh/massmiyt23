@@ -22,8 +22,6 @@ function Home(): JSX.Element {
 
                 <h3>Ranking</h3>
                 <Rank />
-
-                <h3>Recent Results</h3>
             </div>
         </App>
     );
