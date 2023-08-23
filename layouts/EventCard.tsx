@@ -60,12 +60,14 @@ export default function EventCard(): JSX.Element {
                                             )}
                                         </Card.Text>
                                         <Card.Text>
-                                            Next game: <b>{next[0].t_a}</b> vs{' '}
+                                            Next game: ({next.length} ?
+                                            <b>{next[0].t_a}</b> vs{' '}
                                             <b>{next[0].t_b}</b>{' '}
                                             {toTitleCase(
                                                 next[0].day as string
                                             ) || 'N/A'}{' '}
-                                            {(next[0].time as string) || ''}
+                                            {(next[0].time as string) || ''}) :{' '}
+                                            <>N/A</>
                                         </Card.Text>
                                         <Button
                                             href={`/schedule#${sport[0]
