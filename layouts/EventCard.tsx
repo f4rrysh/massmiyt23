@@ -70,7 +70,6 @@ export default function EventCard(): JSX.Element {
                                                     ) || 'N/A'}{' '}
                                                     {(next[0].time as string) ||
                                                         ''}
-                                                    )
                                                 </>
                                             ) : (
                                                 <>N/A</>
